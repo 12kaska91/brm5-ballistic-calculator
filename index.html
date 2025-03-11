@@ -13,11 +13,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Scope Calculator</h1>
+        <h1>Ballistic Calculator V1.1</h1>
         <label for="stance">Select Stance:</label>
         <select id="stance">
+        	<option value="650">Standing</option>
             <option value="400">Prone</option>
-            <option value="650">Standing</option>
+            <option value="650">Shoulders</option>
             <option value="550">Aiming</option>
         </select>
 
@@ -42,11 +43,11 @@
         function calculateDistance() {
             let stance = document.getElementById("stance").value;
             let scope = document.getElementById("scope").value;
-            let mildots = document.getElementById("mildots").value;
+            let mildots = document.getElementById("mildots").value; 
 
             if (mildots > 0) {
-                let distance = (parseFloat(scope) * parseFloat(stance)) / parseFloat(mildots);
-                document.getElementById("result").innerText = `Calculated Distance: ${distance.toFixed(2)} units`;
+                let distance = (parseFloat(scope) * parseFloat(stance)) / parseFloat(mildots); // PM II/LP (RED ILLUM RETICLE) = (1.672*1000)/(MD)=x
+                document.getElementById("result").innerText = `Calculated Distance: ${distance.toFixed(2)} yards`;
             } else {
                 document.getElementById("result").innerText = "Please enter a valid mildot value.";
             }
