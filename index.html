@@ -45,7 +45,7 @@
             let mildots = document.getElementById("mildots").value;
 
             if (mildots > 0) {
-                let distance = (parseFloat(scope) * parseFloat(stance) * 1000) / parseFloat(mildots);
+                let distance = (parseFloat(scope) * parseFloat(stance)) / parseFloat(mildots);
                 document.getElementById("result").innerText = `Calculated Distance: ${distance.toFixed(2)} units`;
             } else {
                 document.getElementById("result").innerText = "Please enter a valid mildot value.";
