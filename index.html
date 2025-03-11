@@ -1,1 +1,56 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        .container { max-width: 500px; margin: auto; }
+        select, input, button { margin: 10px; padding: 10px; font-size: 16px; }
+        #result { font-size: 20px; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scope Calculator</h1>
+        <label for="stance">Select Stance:</label>
+        <select id="stance">
+            <option value="400">Prone</option>
+            <option value="650">Standing</option>
+            <option value="550">Aiming</option>
+        </select>
+
+        <label for="scope">Select Scope:</label>
+        <select id="scope">
+            <option value="1.672">PM II/LP (RED ILLUM RETICLE)</option>
+            <option value="1.12">SU-279/PVS</option>
+            <option value="1.951">PM II/LP (NO RED ILLUM RETICLE)</option>
+            <option value="1.9516">M5xi</option>
+            <option value="0.679">Mark 4 LT</option>
+        </select>
+
+        <label for="mildots">Enter Mildots:</label>
+        <input type="number" id="mildots" min="1" step="any">
+
+        <button onclick="calculateDistance()">Calculate</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateDistance() {
+            let stance = document.getElementById("stance").value;
+            let scope = document.getElementById("scope").value;
+            let mildots = document.getElementById("mildots").value;
+
+            if (mildots > 0) {
+                let distance = (parseFloat(scope) * parseFloat(stance) * 1000) / parseFloat(mildots);
+                document.getElementById("result").innerText = `Calculated Distance: ${distance.toFixed(2)} units`;
+            } else {
+                document.getElementById("result").innerText = "Please enter a valid mildot value.";
+            }
+        }
+    </script>
+</body>
+</html>
