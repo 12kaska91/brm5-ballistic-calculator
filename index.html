@@ -6,14 +6,16 @@
     <title>Ballistic Calculator</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        .container { max-width: 500px; margin: auto; }
+        .container { max-width: 1000px; margin: auto; }
         select, input, button { margin: 10px; padding: 10px; font-size: 16px; }
         #result { font-size: 20px; font-weight: bold; margin-top: 20px; }
+        img {margin-left: auto; margin-right: auto; width: 100%; display: block;}
+        a { margin: 10px; padding: 15px; font-size: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Ballistic Calculator V1.4</h1>
+        <h1>Ballistic Calculator V1.5</h1>
         <label for="stance">Select Stance:</label>
         <select id="stance">
         	<option value="1000">Standing</option>
@@ -37,6 +39,18 @@
         <button onclick="calculateDistance()">Calculate</button>
 
         <div id="result"></div>
+
+        <h1>Infographics:</h1>
+        <a>Standing</a>
+        <img src="./standing_1.png" alt="Standing">
+        <a>Shoulders</a>
+        <img src="./shoulders_1.png" alt="Shoulders">
+        <a>Prone</a>
+        <img src="./prone_1.png" alt="Prone">
+        <a>Aiming</a>
+        <img src="./aiming_1.png" alt="Aiming">
+        <a>Credits/Note</a>
+        <img src="./Credits_1.png" alt="Credits">
     </div>
 
     <script>
