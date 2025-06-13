@@ -55,23 +55,25 @@
         function calculateDistance() {
             let stance = document.getElementById("stance").value;
             let scope = document.getElementById("scope").value;
-            let mildots = document.getElementById("mildots").value; 
-
+            let mildots = document.getElementById("mildots").value;
+    
             if (mildots > 0) {
-                let distance = (parseFloat(scope) * parseFloat(stance)) / parseFloat(mildots); // PM II/LP (RED ILLUM RETICLE) = (1.672*1000)/(MD)=x
+                let distance = (parseFloat(scope) * parseFloat(stance)) / parseFloat(mildots);
                 document.getElementById("result").innerText = `Calculated Distance: ${distance.toFixed(2)} yards`;
             } else {
                 document.getElementById("result").innerText = "Please enter a valid mildot value.";
             }
         }
-
-        let textInput = document.getElementById("mildots");
-        
-        textInput.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                calculateDistance()
-            }
-        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            let textInput = document.getElementById("mildots");
+    
+            textInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    calculateDistance();
+                }
+            });
+        });
     </script>
 </body>
 </html>
