@@ -18,19 +18,17 @@
         <h1>Ballistic Calculator V1.5</h1>
         <label for="stance">Select Stance:</label>
         <select id="stance">
-        	<option value="1000">Standing</option>
-            <option value="400">Prone</option>
-            <option value="650">Shoulders</option>
-            <option value="550">Aiming</option>
+        	<option value="100">Standing</option>
+            <option value="29.72973">Prone</option>
+            <option value="56.7567">Unalert enemy</option>
+            <option value="52.7027">Alert enemy</option>
         </select>
         <br>
         <label for="scope">Select Scope:</label>
-        <select id="scope">
-            <option value="1.672">PM II/LP (RED ILLUM RETICLE)</option>
-            <option value="1.12">SU-279/PVS</option>
-            <option value="1.951">PM II/LP (NO RED ILLUM RETICLE)</option>
-            <option value="1.9516">M5xi</option>
-            <option value="0.679">Mark 4 LT</option>
+        <select id="scope>
+            <option value="15.9">PM II/LP (RED ILLUM RETICLE)</option>
+            <option value="20.1">PM II/LP (NO RED ILLUM RETICLE)</option>
+            <option value="20.1">M5xi</option>">
         </select>
         <br>
         <label for="mildots">Enter Mildots:</label>
@@ -44,11 +42,11 @@
         <a>Standing</a>
         <img src="./standing_1.png" alt="Standing">
         <a>Shoulders</a>
-        <img src="./shoulders_1.png" alt="Shoulders">
+        <img src="./shoulders_1.png" alt="Unalerted Enemies">
         <a>Prone</a>
         <img src="./prone_1.png" alt="Prone">
         <a>Aiming</a>
-        <img src="./aiming_1.png" alt="Aiming">
+        <img src="./aiming_1.png" alt="Alert Enemies">
         <a>Credits/Note</a>
         <img src="./Credits_1.png" alt="Credits">
     </div>
@@ -64,6 +62,12 @@
                 document.getElementById("result").innerText = `Calculated Distance: ${distance.toFixed(2)} yards`;
             } else {
                 document.getElementById("result").innerText = "Please enter a valid mildot value.";
+            }
+        }
+
+        textInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                calculateDistance()
             }
         }
     </script>
